@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:projeto_final/helpers/launch_helper.dart';
 import 'package:projeto_final/ui/home_page.dart';
@@ -9,26 +11,41 @@ class SaldoPage extends StatefulWidget {
 }
 
 class _SaldoPageState extends State<SaldoPage> {
+
+  final _salarioController = TextEditingController();
+  double salario;
+
+  
+
   LaunchHelper helper = LaunchHelper();
   List<Launch> launcher = List();
+
+
+    
 
   @override
   void initState() {
     super.initState();
 
     _getAllLaunch();
+
+    _salarioController.text = "0.0";
   }
 
-
-  final _salarioController = TextEditingController;
-
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _salarioController.dispose();
+    super.dispose();
+  }
+  
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Início"),
+        title: Text("Início", style: TextStyle(color: Colors.black),),
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
@@ -43,7 +60,7 @@ class _SaldoPageState extends State<SaldoPage> {
           Container(
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
             child: TextField(
-              //controller: _salarioController,
+              controller: _salarioController,
               decoration: InputDecoration(
                 labelText: "SALÁRIO",
                 labelStyle: TextStyle(color: Colors.black),
@@ -58,7 +75,7 @@ class _SaldoPageState extends State<SaldoPage> {
             child: Column(
               children: <Widget>[
                 Text("R\$-${_saldoTotal()}", style: TextStyle(fontSize: 40.0, color: Colors.red),),
-                Text("SALDO", style: TextStyle(fontSize: 20.0),),
+                Text("SALDO: ${_salarioTotal()}", style: TextStyle(fontSize: 20.0),),
               ],
             ),
           ),
@@ -94,6 +111,12 @@ class _SaldoPageState extends State<SaldoPage> {
     return (total);
   }
 
+  double _salarioTotal(){
+    double total = 0;
+    total = double.parse(_salarioController.text) - _saldoTotal();
+    return (total);
+  }
+
   void _getAllLaunch() {
     helper.getAllLaunch().then((list) {
       setState(() {
@@ -102,3 +125,7 @@ class _SaldoPageState extends State<SaldoPage> {
     });
   }
 }
+
+
+
+
