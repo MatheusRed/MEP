@@ -45,7 +45,7 @@ class _SaldoPageState extends State<SaldoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Início", style: TextStyle(color: Colors.black),),
+        title: Text("Início ", style: TextStyle(color: Colors.black),),
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
