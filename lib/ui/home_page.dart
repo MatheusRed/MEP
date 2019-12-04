@@ -21,26 +21,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Lançamentos   Total: R\$${_saldoTotal()}", style: TextStyle(color: Colors.black),),
-        backgroundColor: Colors.amber,
-        centerTitle: true,
-      ),
-      backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _showLaunchPage();
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.amber,
-      ),
-      body: ListView.builder(
-        padding: EdgeInsets.all(10.0),
-        itemCount: launcher.length,
-        itemBuilder: (context, index) {
-          return _launchCard(context, index);
-        },
-      ),
+        appBar: AppBar(
+          title: Text("Lançamentos   Total: R\$${_saldoTotal()}", style: TextStyle(color: Colors.black),),
+          backgroundColor: Colors.amber,
+          centerTitle: true,
+        ),
+        backgroundColor: Colors.white,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _showLaunchPage();
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.amber,
+        ),
+        body: ListView.builder(
+          padding: EdgeInsets.all(10.0),
+          itemCount: launcher.length,
+          itemBuilder: (context, index) {
+            return _launchCard(context, index);
+          },
+        ),
     );
   }
 
