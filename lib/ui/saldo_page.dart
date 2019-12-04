@@ -29,7 +29,7 @@ class _SaldoPageState extends State<SaldoPage> {
 
     _getAllLaunch();
 
-    _salarioController.text = "0.0";
+    _salarioController.text = "0";
   }
 
   @override
@@ -111,7 +111,7 @@ class _SaldoPageState extends State<SaldoPage> {
     return (total);
   }
 
-  double _salarioTotal(){
+  double _salarioTotal() {
     double total = 0;
     total = double.parse(_salarioController.text) - _saldoTotal();
     return (total);

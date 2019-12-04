@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lançamentos "),
+        title: Text("Lançamentos   Total: R\$${_saldoTotal()}", style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.amber,
         centerTitle: true,
       ),
@@ -42,6 +42,14 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     );
+  }
+
+  double _saldoTotal() {
+    double total = 0;
+    for (int i = 0; i < launcher.length; i++) {
+      total += double.parse(launcher[i].valor);
+    }
+    return (total);
   }
 
   Widget _launchCard(BuildContext context, int index) {
