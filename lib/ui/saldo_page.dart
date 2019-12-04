@@ -16,12 +16,13 @@ class _SaldoPageState extends State<SaldoPage> {
 
   final _salarioController = TextEditingController();
   double salario;
+  double dinheiros = 0;
 
   @override
   void initState() {
     super.initState();
-    _salarioController.text = "0";
     _getAllLaunch();
+    //_salarioController.text = "0";
   }
 
 
@@ -55,6 +56,13 @@ class _SaldoPageState extends State<SaldoPage> {
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
             child: TextField(
               onChanged: (text){
+                
+                if(_salarioController.text == ""){
+                  dinheiros=0;
+                } else {
+                  dinheiros = double.parse(_salarioController.text);
+                }
+                  
                 setState(() {
                   _getAllLaunch();
                   _saldoTotal();
@@ -121,7 +129,7 @@ class _SaldoPageState extends State<SaldoPage> {
 
   double _salarioTotal() {
     double total = 0;
-    total = double.parse(_salarioController.text) - _saldoTotal();
+    total = (dinheiros) - (_saldoTotal());
     return (total);
   }
 
