@@ -70,7 +70,7 @@ class _SaldoPageState extends State<SaldoPage> {
               },
               controller: _salarioController,
               decoration: InputDecoration(
-                labelText: "SALÁRIO",
+                labelText: "SALÁRIO ",
                 labelStyle: TextStyle(color: Colors.black),
                 border: OutlineInputBorder(),
                 prefixText: "R\$",
