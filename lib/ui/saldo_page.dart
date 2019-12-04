@@ -11,25 +11,19 @@ class SaldoPage extends StatefulWidget {
 }
 
 class _SaldoPageState extends State<SaldoPage> {
+  LaunchHelper helper = LaunchHelper();
+  List<Launch> launcher = List();
 
   final _salarioController = TextEditingController();
   double salario;
 
-  
-
-  LaunchHelper helper = LaunchHelper();
-  List<Launch> launcher = List();
-
-    
-
   @override
   void initState() {
     super.initState();
-
-    _getAllLaunch();
-
     _salarioController.text = "0";
+    _getAllLaunch();
   }
+
 
   @override
   void dispose() {
@@ -38,13 +32,14 @@ class _SaldoPageState extends State<SaldoPage> {
     super.dispose();
   }
   
+  
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Início ", style: TextStyle(color: Colors.black),),
+        title: Text("Início", style: TextStyle(color: Colors.black),),
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
@@ -59,6 +54,12 @@ class _SaldoPageState extends State<SaldoPage> {
           Container(
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
             child: TextField(
+              onChanged: (text){
+                setState(() {
+                  _getAllLaunch();
+                  _saldoTotal();
+                });
+              },
               controller: _salarioController,
               decoration: InputDecoration(
                 labelText: "SALÁRIO",
@@ -101,13 +102,21 @@ class _SaldoPageState extends State<SaldoPage> {
       backgroundColor: Colors.white,
     );
   }
+  _getAllLaunch() {
+    helper.getAllLaunch().then((list) {
+      setState(() {
+        launcher = list;
+        launchTable.length;
+      });
+    });
+  }
 
   double _saldoTotal() {
     double total = 0;
     for (int i = 0; i < launcher.length; i++) {
       total += double.parse(launcher[i].valor);
     }
-    return (total);
+    return total;
   }
 
   double _salarioTotal() {
@@ -116,13 +125,7 @@ class _SaldoPageState extends State<SaldoPage> {
     return (total);
   }
 
-  void _getAllLaunch() {
-    helper.getAllLaunch().then((list) {
-      setState(() {
-        launcher = list;
-      });
-    });
-  }
+  
 }
 
 
