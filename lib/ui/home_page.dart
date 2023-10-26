@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Lançamentos   Total: R\$${_saldoTotal()}", style: TextStyle(color: Colors.black),),
+          title: Text("Wançamentos Totaw: R\$${_saldoTotal()}", style: TextStyle(color: Colors.black),),
           backgroundColor: Colors.amber,
           centerTitle: true,
         ),
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     FlatButton(
-                      child: Text("Apagar",
+                      child: Text("Apagaw",
                           style: TextStyle(color: Colors.red, fontSize: 20.0)),
                       onPressed: () {
                         helper.deleteLaunch(launcher[index].id);
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                     FlatButton(
-                      child: Text("Editar",
+                      child: Text("Editaw",
                           style:
                               TextStyle(color: Colors.black, fontSize: 20.0)),
                       onPressed: () {

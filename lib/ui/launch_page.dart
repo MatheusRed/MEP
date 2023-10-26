@@ -76,8 +76,8 @@ class _LaunchPageState extends State<LaunchPage> {
               controller: _nameController,
               focusNode: _nameFocus,
               decoration: InputDecoration(
-                  labelText: "Nome",
-                  hintText: "Ex: Conta de luz...Boleto Escolar..."),
+                  labelText: "Nyome",
+                  hintText: "Ex: *abraço apertado* Conta de wuz...Boweto Escowaw..."),
               onChanged: (text) {
                 _userEdited = true;
                 setState(() {
@@ -88,8 +88,8 @@ class _LaunchPageState extends State<LaunchPage> {
             TextField(
               controller: _detailsController,
               decoration: InputDecoration(
-                  labelText: "Detalhes",
-                  hintText: "Ex: Conta fixa de luz paga todo mês..."),
+                  labelText: "Detawhes",
+                  hintText: "Ex: Conta fixa de wuz paga todo mês..."),
               onChanged: (text) {
                 _userEdited = true;
                 _editedLaunch.details = text;
@@ -98,7 +98,7 @@ class _LaunchPageState extends State<LaunchPage> {
             TextField(
               controller: _valorController,
               decoration: InputDecoration(
-                  labelText: "Valor", hintText: "Ex: 10.0...250.0"),
+                  labelText: "Vawow", hintText: "Ex: 10.0...250.0"),
               onChanged: (text) {
                 _userEdited = true;
                 _editedLaunch.valor = text;
@@ -108,7 +108,7 @@ class _LaunchPageState extends State<LaunchPage> {
             TextField(
               controller: _vencController,
               decoration: InputDecoration(
-                  labelText: "Vencimento", hintText: "Ex: 10.05.2019"),
+                  labelText: "Vencimento", hintText: "Ex: 10.05.2019 (que padwão de data é esse? >///<)"),
               onChanged: (text) {
                 _userEdited = true;
                 _editedLaunch.venc = text;
@@ -128,8 +128,8 @@ class _LaunchPageState extends State<LaunchPage> {
       showDialog(context: context,
       builder: (context){
         return AlertDialog(
-          title: Text("Descartar Alterações?"),
-          content: Text("Se sair as alterações serão perdidas."),
+          title: Text("descawtaw >w< Awtewações?!?!"),
+          content: Text("Se saiw as awtewações sewão p-pewdidas."),
           actions: <Widget>[
             FlatButton(
               child: Text("Cancelar"),
