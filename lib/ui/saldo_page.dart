@@ -70,7 +70,7 @@ class _SaldoPageState extends State<SaldoPage> {
               },
               controller: _salarioController,
               decoration: InputDecoration(
-                labelText: "SALÁRIO ",
+                labelText: "SAWÁWIO ",
                 labelStyle: TextStyle(color: Colors.black),
                 border: OutlineInputBorder(),
                 prefixText: "R\$",
@@ -83,7 +83,7 @@ class _SaldoPageState extends State<SaldoPage> {
             child: Column(
               children: <Widget>[
                 Text("R\$-${_saldoTotal()}", style: TextStyle(fontSize: 40.0, color: Colors.red),),
-                Text("SALDO: ${_salarioTotal()}", style: TextStyle(fontSize: 20.0),),
+                Text("SAWDO: ${_salarioTotal()}", style: TextStyle(fontSize: 20.0),),
               ],
             ),
           ),
@@ -100,7 +100,7 @@ class _SaldoPageState extends State<SaldoPage> {
             padding: const EdgeInsets.all(10.0),
             child: Container(
               child: const Text(
-                "Ver Lançamentos",
+                "Vew W-Wançamentos",
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
